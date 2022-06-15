@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="javaPartOne:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/javaPartOne_jar</output-path>
+    <root id="archive" name="javaPartOne.jar">
+      <element id="module-output" name="javaPartOne" />
+    </root>
+  </artifact>
+</component>
