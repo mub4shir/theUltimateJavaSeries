@@ -1,7 +1,5 @@
 package com.parttwo;
 
-import java.util.Locale;
-
 public class Main {
     public static void main(String[] args) { // java runtime to directly call this method without having to create a new object
 //        var textBox1 = new TextBox();
