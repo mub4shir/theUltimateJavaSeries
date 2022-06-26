@@ -214,6 +214,111 @@ class Demo5 {
 
 
 ///////////////////////////////////////////////////////////////////////
+// Class Rectangle
+class Rectangle {
+
+    // Private Fields
+    private int length;
+    private int width;
+
+    // Default Constructor
+    public Rectangle() {
+        this.length = 0;
+        this.width = 0;
+    }
+
+    // Parameterized Constructor
+    public Rectangle(int length, int width) {
+        this.length = length;
+        this.width = width;
+
+    }
+
+    // Method to calculate Area of a rectangle
+    public int getArea() {
+        return this.length * this.width;
+    }
+
+}
+
+class Demo6 {
+
+    public static void main(String args[]) {
+
+        Rectangle obj = new Rectangle(2, 2);
+        System.out.println(obj.getArea());
+
+    }
+
+}
+///////////////////////////////////////////////////////////////////////
+
+
+// Student Class
+class Student2 {
+
+    // Private Fields
+    private String name;
+    private String rollNumber;
+    public Student2(){
+        name = "Unknown";
+        rollNumber = "N/A";
+    }
+
+
+    // getter function for name
+    public String getName() {
+        return name;
+    }
+
+    // setter function for name
+    public void setName(String x) {
+        this.name = x;
+    }
+
+    // getter function for roll number
+    public String getRollNumber() {
+        return this.rollNumber;
+    }
+
+    // setter function for roll number
+    public void setRollNumber(String x) {
+        this.rollNumber = x;
+    }
+
+}
+
+ class demo7 {
+    public static void main(String[] args) {
+        Student2 x = new Student2();
+        System.out.println(x.getName());
+        x.setName("Samantha");
+        String student_name = x.getName();
+        System.out.println(student_name);
+
+        System.out.println(x.getRollNumber());
+        x.setRollNumber("2211");
+        String student_rollnum = x.getRollNumber();
+        System.out.println(student_rollnum);
+
+
+    }
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
+
+///////////////////////////////////////////////////////////////////////
+
 public class All {
 
 }
