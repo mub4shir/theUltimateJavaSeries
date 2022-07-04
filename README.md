@@ -438,7 +438,84 @@ testable
 
  
 
- 
+# exceptions
+````
+    # an exception is an object that contains information about an error 
+    # in java we have three types of exceptions 
+    # checked : are exceptions that we developer should anticipate and handle properly 
+    for example we wanna read data from a file, what if the file does not exist 
+    java compiler enforceses us handle these errors that is why they are called checked exceptions because they get checked at compile time 
+    # unchecked / runtime exceptions : these expeptions are not checked by compiler at compile time they occur because of programming errors 
+    NullPointerException is an example of runtime exception 
+    ArithmeticException: gets thrown when we divide value by zero
+    IllegalArgumentException: agrument we passed the method was not accepted 
+    IndexOutOfBoundsException: gets thrown if we try to access an element in an array , string, or a list using an invalid index
+    IllegalStateException: if we try to call a method but the underlying object is not in the right state 
+    # errors: error external to an application for example stackoverflow error or out of memory error 
+    jvm runs out of memory, infinite recursion , or problem in jvm itself 
+    
+    
+    # exception hierarchy 
+    
+                throwable  // class  defines common charactristics for all exceptions and errors like an error message and the stack trace 
+                
+                
+        exception // parent for all checked and unchecked exceptions            error  // errors that are external to appplication like out of memory error 
+        
+        
+        runtimeException  represents runtime exceptions aka unchecked exceptions  
+        
+        # so if an exception class derives from the runtimeException its considered an unchecked exception 
+        otherwise its an checked exception this is bit wired because when you think that in classes that derive from the exception class is checked exception
+        so runtimeException should also be a checked exception but that is not how it works why honestly i have no clue u have to ask the developer of java 
+        
+        
+        # we can have multiple catch blocks and each catch block can target specfic type of and exception 
+        like 
+        
+        try {
+           var reader = new FileReader("file.txt");
+           var value = reader.read();
+        }
+        catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+        catch (IOException e){
+            System.out.println("Could not read data");
+        }
+        
+        # sometimes the order of catch blocks matter  
+        # so if u have an IOException it an catch IOExceptions or any of its derivatives 
+        like FileNotFoundException and the classes that extend IOException class 
+        
+        IOException ex = new IOexception()
+        or 
+        IOException ex = new FileNotFoundException()
+        this is ploymorphism an object taking different forms   
+        
+        catch(IOException | ParseException e){
+            System.out.println("could no read data");
+        }
+        
+        
+       # try with resources statement 
+       
+       try (
+            var reader = new FileReader("file.txt");
+            var writer = new FileWriter("..."); 
+            ) {
+            var value = reader.read();
+        }
+        catch(IOException e){
+            System.out.println("Could not read data");
+        }
+        
+        try statement that has one or more resource with this structure we don't need to explicitly this resource inside the finally block the java compiler will do that for us 
+        it will translate this code, it will add a finally block and explicitly close the reader object, now for to work the FileReader should implement AutoCloseable interface
+        AutoCloseable interface declares a method called close() so the close method we have in FileReader actually comes from here 
+         
+        
+````
  
 
 
